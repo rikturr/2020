@@ -1,2 +1,5 @@
 # rikturr
-rikturr.com
+
+[https://rikturr.com](rikturr.com)
+
+Aaron Richter's personal website
