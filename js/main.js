@@ -6,21 +6,25 @@ $(document).ready(function() {
     });
 
     // Navbar slideline
+
+    // Active item
+    function slideActiveNav(ai, sl) {
+        if (ai) {
+            sl.css({
+                'width': ai.width(),
+                'left': ai.position().left
+            });
+        } else {
+            sl.width(0);
+        }
+    }
+
+    // navbar
     var nav = $('#navbars-default'),
         slideLine = $('#slideline'),
         activeItem = ($(nav).find('a.active').length > 0) ? $(nav).find('a.active') : $(nav).find('a:first-child');
-    // Active item
-    function slideActiveNav() {
-        if (activeItem) {
-            slideLine.css({
-                'width': activeItem.width(),
-                'left': activeItem.position().left
-            });
-        } else {
-            slideLine.width(0);
-        }
-    }
-    slideActiveNav();
+    
+    slideActiveNav(activeItem, slideLine);
     $('.navbar a.nav-link').on('mouseover', function(event) {
         slideLine.css({
           'width': $(this).width(),
@@ -28,7 +32,7 @@ $(document).ready(function() {
         });
     });
     $(nav).on('mouseleave', function(event) {
-        slideActiveNav();
+        slideActiveNav(activeItem, slideLine);
     });
     $('.navbar a.nav-link').on('click', function(event) {
         $('.navbar').find('a.active').removeClass('active');
@@ -38,6 +42,33 @@ $(document).ready(function() {
             'left': $(this).position().left
         });
     });
+
+    // skills pills
+    var navSkills = $('#skills-tab'),
+        slideLineSkills = $('#slideline-skills'),
+        activeItemSkills = ($(navSkills).find('a.active').length > 0) ? $(navSkills).find('a.active') : $(navSkills).find('a:first-child');
+    // activeItemSkills.addClass('active2');
+    
+    slideActiveNav(activeItemSkills, slideLineSkills);
+    $('#skills-tab a.nav-link').on('mouseover', function(event) {
+        slideLineSkills.css({
+          'width': $(this).width(),
+          'left': $(this).position().left
+        });
+    });
+    $(navSkills).on('mouseleave', function(event) {
+        slideActiveNav(activeItemSkills, slideLineSkills);
+    });
+    $('#skills-tab a.nav-link').on('click', function(event) {
+        $('#skills-tab').find('a.active').removeClass('active');
+        $('#skills-eng-tab').removeClass('active2');
+        activeItemSkills = $(this);
+        slideLineSkills.css({
+            'width': $(this).width(),
+            'left': $(this).position().left
+        });
+    });
+
 
     // Navbar sticky
     if ($('#navbar').length > 0 ) {
@@ -133,39 +164,5 @@ $(document).ready(function() {
             };
         }
     });
-
-// $(function() {
-//     var $el,
-//       leftPos,
-//       newWidth,
-//       $mainNav = $(".navbar-nav");
-  
-//     $mainNav.append("<li id='magic-line'></li>");
-//     var $magicLine = $("#magic-line");
-  
-//     $magicLine
-//       .width($(".active").width())
-//       .css("left", $(".active a").position().left)
-//       .data("origLeft", $magicLine.position().left)
-//       .data("origWidth", $magicLine.width());
-  
-//     $(".navbar-nav li a").hover(
-//       function() {
-//         $el = $(this);
-//         leftPos = $el.position().left;
-//         newWidth = $el.parent().width();
-//         $magicLine.stop().animate({
-//           left: leftPos,
-//           width: newWidth
-//         });
-//       },
-//       function() {
-//         $magicLine.stop().animate({
-//           left: $magicLine.data("origLeft"),
-//           width: $magicLine.data("origWidth")
-//         });
-//       }
-//     );
-//   });
 
 });
