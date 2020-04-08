@@ -291,7 +291,18 @@ ul.social li.social-item {
 }
 .portfolio-grid [class*="col"] {  
     margin-right: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
+}
+.portfolio-grid img {
+    margin-bottom: 10px;
+}
+.portfolio-grid a {
+    text-decoration: none;
+    color: #000000 !important;
+    padding-bottom: 10px;
+}
+.portfolio-grid a:hover, .portfolio-grid a:active, .portfolio-grid a:focus {
+    border-bottom: 3px solid #0000FF;
 }
 
 .about-anchor {
