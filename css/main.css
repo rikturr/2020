@@ -10,6 +10,13 @@ a {
 p a {
     text-decoration: underline;
 }
+span a {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+}
 
 a:hover, a:active, a:focus {
     color: #0000FF;
@@ -239,16 +246,12 @@ ul.social li.social-item {
 .skills-active {
     opacity: 1;
 }
-
-.skill-list {
-    list-style-type: none;
-}
 .skill-list li{
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 2px;
 }
-.skill-list li:before {
+.skill-list li:before, .portfolio li:before {
     content: '';
     display: inline-block;
     height: 14px;
@@ -322,9 +325,35 @@ ul.social li.social-item {
     text-decoration: none;
     color: #000000 !important;
     padding-bottom: 10px;
+    cursor: pointer;
 }
-.portfolio-grid a:hover, .portfolio-grid a:active, .portfolio-grid a:focus {
+.portfolio-grid a:hover, .portfolio-grid .active {
     border-bottom: 3px solid #0000FF;
+}
+
+.portfolio-title {
+    display: flex;
+    position: relative;
+}
+.portfolio-title:before {
+    content: "";
+    width: 60px;
+    height: 2px;
+    margin-right: 10px;
+    background-color: #000000;
+    top: 10px;
+    position: relative;
+}
+
+.port-close {
+    top: -35px;
+    position: relative;
+}
+
+@media (max-width: 576px) {
+    .port-item h3 {
+        display: none;
+    }
 }
 
 .about-anchor {
@@ -371,7 +400,6 @@ ul.social li.social-item {
 
 h5.title-line {
     margin-bottom: 40px;
-    text-decoration: underline #0000FF;
 }
 
 .footer {

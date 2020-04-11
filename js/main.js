@@ -1,10 +1,58 @@
 
+var SM = 576;
+
 $(document).ready(function() {
 
     AOS.init({
         once: true
     });
 
+    // portfolio grid weirdness
+    var activePort = {};
+    if ($(this).width() > SM) {
+        $('.port-button-1').attr('data-target', '#port-item-1');
+        $('.port-button-2').attr('data-target', '#port-item-2');
+        $('.port-button-3').attr('data-target', '#port-item-3');
+
+        $('[class^="port-button"]').on('click', function(event) {
+            event.stopPropagation();
+
+            var target = '#' + $(this).attr('id').replace('-button', '') + '-mobile';
+            var cls = $(this).attr('class').split(' ')[0];
+            var which = cls[cls.length -1];
+    
+            if ($('#port-item-' + which).hasClass('show')) {
+                $('.port-button-' + which + '.active').removeClass('active');
+                if (activePort[which] === target) {
+                    $('#port-item-' + which).collapse('hide');
+                } else {
+                    $('#port-item-' + which).hide().html($(target).html()).fadeIn('fast').show();
+                    $(this).addClass('active');
+                }
+            } else {
+                $(this).addClass('active');
+                $('#port-item-' + which).html($(target).html());
+                $('#port-item-' + which).collapse('show');
+            }
+            
+            activePort[which] = target;
+            
+            $('.port-close').click(function () {
+                $('.port-button-' + which + '.active').removeClass('active');
+                $(this).parent().collapse('hide');
+            });
+        });
+    } else {
+        $('[class^="port-button"]').on('click', function(event) {
+            $(this).toggleClass('active');
+        });
+
+        $('.port-close').click(function () {
+            $(this).parent().collapse('hide');
+        });
+    }
+
+    
     // Navbar slideline
 
     // Active item

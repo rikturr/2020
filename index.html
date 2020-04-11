@@ -310,57 +310,143 @@
     <div id="portfolio" class="portfolio-anchor"></div>
     <section class="portfolio">
         <div class="container-fluid">
-            <div class="row justify-content-center portfolio-grid">
-                <div class="col-lg-3 col-sm-4">
-                    <a href="#!">
-                        <img class="img-fluid" alt="Talks" src="img/talks-thumb.jpg" srcset="img/talks-thumb.jpg 1x, img/talks-thumb@2x.jpg 2x">
-                        <h4>Talks & Publications</h4>
-                        <span>Conferences, meetups, journals</span>
-                    </a>
+            <div class="portfolio-grid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-sm-4">
+                        <a id="port-talks-button" class="port-button-1" data-toggle="collapse" data-target="#port-talks-mobile" aria-expanded="false" aria-controls="port-talks-mobile">
+                            <img class="img-fluid" alt="Talks" src="img/talks-thumb.jpg" srcset="img/talks-thumb.jpg 1x, img/talks-thumb@2x.jpg 2x">
+                            <h4>Talks & Publications</h4>
+                            <span>Conferences, meetups, journals</span>
+                        </a>
+                    </div>
+
+                    <div id="port-talks-mobile" class="port-item col-lg-5 justify-content-center collapse">
+                        <h3 class="portfolio-title justify-content-center hidden-sm-down">Talks & Publications</h3>
+                        <button type="button" class="close port-close" aria-label="Close"><span aria-hidden="true">X</span></button>
+                        <ul>
+                            <li>Miami Machine Learning meetup group, 2018-2019: ​Organizer, speaker at several sessions</li>
+                            <li>Lynn University hackathon, April 2019: ​Judge</li>
+                            <li>Ironhack, March 2019: ​I’m a data scientist, ask me anything!</li>
+                            <li>Cornell health tech hackathon NYC, February 2019: ​Mentor</li>
+                            <li>PyData Miami conference, January 2019: ​Organized conference, and gave talk</li>
+                            <li>Lynn University Data Analytics conference, November 2018: Panel member</li>
+                            <li>FAU Big Data Science conference, October 2018: Gave talk, “A modern big data architecture for healthcare research”</li>
+                            <li>Data.miami bootcamp, July 2018: ​Gave tutorial on Spark + R</li>
+                            <li>Spark+AI Summit, June 2018: ​Gave talk about ModMed ETL framework</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <a id="port-phd-button" class="port-button-1" data-toggle="collapse" data-target="#port-phd-mobile" aria-expanded="false" aria-controls="port-phd-mobile">
+                            <img class="img-fluid" alt="PhD Dissertation" src="img/phd-thumb.jpg" srcset="img/phd-thumb.jpg 1x, img/phd-thumb@2x.jpg 2x">
+                            <h4>Predicting Melanoma Risk</h4>
+                            <span>PhD dissertation</span>
+                        </a>
+                    </div>
+
+                    <div id="port-phd-mobile" class="port-item col-lg-5 justify-content-center collapse">
+                        <h3 class="portfolio-title justify-content-center">Predicting Melanoma Risk</h3>
+                        <button type="button" class="close port-close" aria-label="Close"><span aria-hidden="true">X</span></button>
+                        <p>Built and evaluated several machine learning models to predict individual patient risk of devloping melanoma from routinely captured electronic health records. 
+                            Involved processing de-identified data from over 20 million patients into a research dataset to create over 100,000 features used for building predictive models.</p>
+                        <h5>Tech</h5>
+                        <p>Wrote all code and conducted all experiments myself</p>
+                        <ul>
+                            <li><b>Languages:</b> Python, R, SQL, LaTeX</li>
+                            <li><b>Platforms:</b> AWS (EC2, S3, EMR), Databricks</li>
+                            <li><b>Data prep:</b> Apache Spark, tidyverse, pandas/numpy/scipy</li>
+                            <li><b>ML:</b> logistic regression, decision trees, random forest, XGBoost, SHAP</li>
+                            <li><b>Analysis:</b> RMarkdown, ggplot2, Shiny</li>
+                            <li><b>Writing:</b> Overleaf / ShareLaTeX, Lucidchart</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#!">
-                        <img class="img-fluid" alt="PhD Dissertation" src="img/phd-thumb.jpg" srcset="img/phd-thumb.jpg 1x, img/phd-thumb@2x.jpg 2x">
-                        <h4>Predicting Melanoma Risk</h4>
-                        <span>PhD dissertation</span>
-                    </a>
+                <!-- <div class="w-100"></div> -->
+
+                <div class="row justify-content-center">
+                    <div id="port-item-1" class="port-item col-lg-5 collapse"></div>
                 </div>
 
-                <div class="w-100"></div>
+                <div class="row justify-content-center">
 
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#!">
-                        <img class="img-fluid" alt="ETL" src="img/etl-thumb.jpg" srcset="img/etl-thumb.jpg 1x, img/etl-thumb@2x.jpg 2x">
-                        <h4>Spark ETL</h4>
-                        <span>Object-oriented ETL framework for ModMed</span>
-                    </a>
+                    <div class="col-lg-4 col-sm-6">
+                        <a id="port-etl-button" class="port-button-2" data-toggle="collapse" data-target="#port-etl-mobile" aria-expanded="false" aria-controls="port-etl-mobile">
+                            <img class="img-fluid" alt="ETL" src="img/etl-thumb.jpg" srcset="img/etl-thumb.jpg 1x, img/etl-thumb@2x.jpg 2x">
+                            <h4>Spark ETL</h4>
+                            <span>Object-oriented ETL framework for ModMed</span>
+                        </a>
+                    </div>
+
+                    <div id="port-etl-mobile" class="port-item col-lg-5 justify-content-center collapse">
+                        <h3 class="portfolio-title justify-content-center">Spark ETL</h3>
+                        <button type="button" class="close port-close" aria-label="Close"><span aria-hidden="true">X</span></button>
+                        <ul>
+                            <li>Made data do things</li>
+                            <li>Spark fast, make data go weeeeee</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-4">
+                        <a id="port-team-button" class="port-button-2" data-toggle="collapse" data-target="#port-team-mobile" aria-expanded="false" aria-controls="port-team-mobile">
+                            <img class="img-fluid" alt="Data team" src="img/modmed-thumb.jpg" srcset="img/modmed-thumb.jpg 1x, img/modmed-thumb@2x.jpg 2x">
+                            <h4>Data Team @ ModMed</h4>
+                            <span>Tech lead</span>
+                        </a>
+                    </div>
+
+                    <div id="port-team-mobile" class="port-item col-lg-5 justify-content-center collapse">
+                        <h3 class="portfolio-title justify-content-center">Data Team @ ModMed</h3>
+                        <button type="button" class="close port-close" aria-label="Close"><span aria-hidden="true">X</span></button>
+                        <ul>
+                            <li>I found people to do stuff</li>
+                            <li>And then helped them do the stuff</li>
+                        </ul>
+                    </div>
+
                 </div>
 
-                <div class="col-lg-3 col-sm-4">
-                    <a href="#!">
-                        <img class="img-fluid" alt="Data team" src="img/modmed-thumb.jpg" srcset="img/modmed-thumb.jpg 1x, img/modmed-thumb@2x.jpg 2x">
-                        <h4>Data Team @ ModMed</h4>
-                        <span>Tech lead</span>
-                    </a>
+                <div class="row justify-content-center">
+                    <div id="port-item-2" class="port-item col-lg-5 collapse"></div>
                 </div>
 
-                <div class="w-100"></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-sm-4">
+                        <a id="port-aws-button" class="port-button-3" data-toggle="collapse" data-target="#port-aws-mobile" aria-expanded="false" aria-controls="port-aws-mobile">
+                            <img class="img-fluid" alt="AWS ML" src="img/aws-thumb.jpg" srcset="img/aws-thumb.jpg 1x, img/aws-thumb@2x.jpg 2x">
+                            <h4>AWS ML Experimenter</h4>
+                            <span>Framework with scikit-learn</span>
+                        </a>
+                    </div>
+                    <div id="port-aws-mobile" class="port-item col-lg-5 justify-content-center collapse">
+                        <h3 class="portfolio-title justify-content-center">AWS ML Experimenter</h3>
+                        <button type="button" class="close port-close" aria-label="Close"><span aria-hidden="true">X</span></button>
+                        <ul>
+                            <li>I did MLs</li>
+                            <li>Then I looked at them</li>
+                        </ul>
+                    </div>
 
-                <div class="col-lg-3 col-sm-4">
-                    <a href="#!">
-                        <img class="img-fluid" alt="AWS ML" src="img/aws-thumb.jpg" srcset="img/aws-thumb.jpg 1x, img/aws-thumb@2x.jpg 2x">
-                        <h4>AWS ML Experimenter</h4>
-                        <span>Machine learning experimentation framework</span>
-                    </a>
+                    <div class="col-lg-4 col-sm-6">
+                        <a id="port-pydata-button" class="port-button-3" data-toggle="collapse" data-target="#port-pydata-mobile" aria-expanded="false" aria-controls="port-pydata-mobile">
+                            <img class="img-fluid" alt="PyData Miami" src="img/pydata-thumb.jpg" srcset="img/pydata-thumb.jpg 1x, img/pydata-thumb@2x.jpg 2x">
+                            <h4>PyData Miami</i></h4>
+                            <span>Conference and meetup organizer, speaker</span>
+                        </a>
+                    </div>
+
+                    <div id="port-pydata-mobile" class="port-item col-lg-5 justify-content-center collapse">
+                        <h3 class="portfolio-title justify-content-center">PyData Miami</h3>
+                        <button type="button" class="close port-close" aria-label="Close"><span aria-hidden="true">X</span></button>
+                        <ul>
+                            <li>Will we ever have another conference?</li>
+                            <li>Only corona knows</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#!">
-                        <img class="img-fluid" alt="PyData Miami" src="img/pydata-thumb.jpg" srcset="img/pydata-thumb.jpg 1x, img/pydata-thumb@2x.jpg 2x">
-                        <h4>PyData Miami</h4>
-                        <span>Conference and meetup organizer, speaker</span>
-                    </a>
+                <div class="row justify-content-center">
+                    <div id="port-item-3" class="port-item col-lg-5 collapse"></div>
                 </div>
             </div>
         </div>
