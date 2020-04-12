@@ -15,12 +15,13 @@ $(document).ready(function() {
         $('.port-button-3').attr('data-target', '#port-item-3');
 
         $('[class^="port-button"]').on('click', function(event) {
+            // web, two column collapse
             event.stopPropagation();
 
             var target = '#' + $(this).attr('id').replace('-button', '') + '-mobile';
             var cls = $(this).attr('class').split(' ')[0];
             var which = cls[cls.length -1];
-    
+
             if ($('#port-item-' + which).hasClass('show')) {
                 $('.port-button-' + which + '.active').removeClass('active');
                 if (activePort[which] === target) {
@@ -44,15 +45,15 @@ $(document).ready(function() {
         });
     } else {
         $('[class^="port-button"]').on('click', function(event) {
+            // mobile, one column collapse independently
             $(this).toggleClass('active');
-        });
-
-        $('.port-close').click(function () {
-            $(this).parent().collapse('hide');
         });
     }
 
-    
+
+    $('.port-close').click(function () {
+        $(this).parent().collapse('hide');
+    });
     // Navbar slideline
 
     // Active item

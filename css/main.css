@@ -321,13 +321,16 @@ ul.social li.social-item {
 .portfolio-grid img {
     margin-bottom: 10px;
 }
-.portfolio-grid a {
+.portfolio-grid [class*="port-button"] a {
     text-decoration: none;
     color: #000000 !important;
     padding-bottom: 10px;
     cursor: pointer;
 }
-.portfolio-grid a:hover, .portfolio-grid .active {
+.portfolio-grid span {
+    padding-bottom: 5px;
+}
+.portfolio-grid a:hover span, .portfolio-grid .active span {
     border-bottom: 3px solid #0000FF;
 }
 
@@ -350,10 +353,18 @@ ul.social li.social-item {
     position: relative;
 }
 
-@media (max-width: 576px) {
-    .port-item h3 {
-        display: none;
-    }
+[class*="port-button"] i {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: 0.5s;
+}
+
+[class*="port-button"].active i {
+    -webkit-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg);
+    
 }
 
 .about-anchor {
