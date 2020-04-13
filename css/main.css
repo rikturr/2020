@@ -321,7 +321,7 @@ ul.social li.social-item {
 .portfolio-grid img {
     margin-bottom: 10px;
 }
-.portfolio-grid [class*="port-button"] a {
+.portfolio-grid [class*="port-button"] {
     text-decoration: none;
     color: #000000 !important;
     padding-bottom: 10px;
@@ -331,7 +331,7 @@ ul.social li.social-item {
     padding-bottom: 5px;
 }
 .portfolio-grid a:hover span, .portfolio-grid .active span {
-    border-bottom: 3px solid #0000FF;
+    border-bottom: 3px solid #0000FF
 }
 
 .portfolio-title {
@@ -365,6 +365,18 @@ ul.social li.social-item {
     -ms-transform: rotate(540deg);
     transform: rotate(540deg);
     
+}
+
+.port-item a:hover, .port-item a:active, .port-item a:focus  {
+    text-decoration: none;
+}
+
+.list-talks li span {
+    margin-left: 30px;
+    font-size: 14px;
+}
+.port-item .list-talks .featured {
+    font-weight: 600;
 }
 
 .about-anchor {
