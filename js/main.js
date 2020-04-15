@@ -7,6 +7,11 @@ $(document).ready(function() {
         once: true
     });
 
+    // skills carousel
+    $('.carousel-indicators, .carousel-control-prev, .carousel-control-next').on('click', function(event) {
+        $('#skills-carousel').carousel('pause');
+    });
+
     // portfolio grid weirdness
     var activePort = {};
     if ($(this).width() > SM) {

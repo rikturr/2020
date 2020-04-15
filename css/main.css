@@ -251,7 +251,7 @@ ul.social li.social-item {
     font-weight: bold;
     letter-spacing: 2px;
 }
-.skill-list li:before, .portfolio li:before {
+.circle-bullet li:before {
     content: '';
     display: inline-block;
     height: 14px;
@@ -263,6 +263,44 @@ ul.social li.social-item {
     margin-right: 10px;   
     margin-top: 20px;
 }
+
+#skills-carousel {
+    width: 100%;
+}
+#skills-carousel .carousel-indicators {
+    /* bottom: 100px; */
+    position: relative;
+    margin-bottom: 70px;
+}
+#skills-carousel .carousel-indicators li {
+    text-indent: unset;
+    font-size: 16px;
+    width: auto;
+    background-color: transparent;
+}
+#skills-carousel .carousel-indicators li:not(:last-child) {
+    margin-right: 30px;
+  }
+#skills-carousel .carousel-indicators li.active,  #skills-carousel .carousel-indicators li:hover{
+    background-color: #0000FF;
+    transition: 0.3s ease;
+}
+#skills-carousel .carousel-control-prev, #skills-carousel .carousel-control-next {
+    bottom: 100px;
+}
+#skills-carousel .carousel-control-prev i, #skills-carousel .carousel-control-next i {
+    color: #0000FF;
+    font-size: 20px;
+}
+
+#skills-carousel .carousel-inner {
+    height: 400px !important;
+} 
+@media (max-width: 576px) {
+    #skills-carousel .carousel-inner {
+        height: 600px !important;
+    } 
+} 
 
 /* .skill-tools {
     border-right: 1px solid;
@@ -358,13 +396,15 @@ ul.social li.social-item {
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
     transition: 0.5s;
+    opacity: 0.5;
+    color: #0000FF;
 }
 
 [class*="port-button"].active i {
     -webkit-transform: rotate(540deg);
     -ms-transform: rotate(540deg);
     transform: rotate(540deg);
-    
+    opacity: 1;
 }
 
 .port-item a:hover, .port-item a:active, .port-item a:focus  {
