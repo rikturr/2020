@@ -314,7 +314,7 @@
             <div class="portfolio-grid">
                 <div class="row justify-content-center">
                     <div class="col-lg-3 col-sm-4">
-                        <a id="port-talks-button" class="port-button-1 active" data-toggle="collapse" data-target="#port-talks-mobile" aria-expanded="false" aria-controls="port-talks-mobile">
+                        <a id="port-talks-button" class="port-button-1" data-toggle="collapse" data-target="#port-talks-mobile" aria-expanded="false" aria-controls="port-talks-mobile">
                             <img class="img-fluid" alt="Talks" src="img/talks-thumb.jpg" srcset="img/talks-thumb.jpg 1x, img/talks-thumb@2x.jpg 2x">
                             <h4>Talks & Publications</h4>
                             <span>Conferences, meetups &nbsp;&nbsp; <i class="lni lni-chevron-down"></i></span>
@@ -376,7 +376,7 @@
                             </li>
                         </ul>
                         <br>
-                        <h4>Featured publications</h4>
+                        <h4>Selected publications</h4>
                         <ul class="list-talks">
                             <li><a href ="https://link.springer.com/article/10.1007/s13721-020-0218-0" target="_blank">Sample size determination for biomedical big data with limited labels &nbsp;<i class="lni lni-book"></i></a>
                                 <br><span>Network Modeling Analysis in Health Informatics and Bioinformatics, January 2020</span>
@@ -384,13 +384,13 @@
                             <li><a href="content/dissertation.pdf" target="_blank">Predicting melanoma risk from electronic health records with machine learning techniques &nbsp;<i class="lni lni-book"></i></a>
                                 <br><span>PhD dissertation, July 2019</span>
                             </li>
-                            <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0010482519301477" target="_blank">Efficient learning from big data for cancer risk modeling: A case study with melanoma &nbsp;<i class="lni lni-book"></i></a>
+                            <li><a class="featured" href="https://www.sciencedirect.com/science/article/abs/pii/S0010482519301477" target="_blank">Efficient learning from big data for cancer risk modeling: A case study with melanoma &nbsp;<i class="lni lni-book"></i></a>
                                 <br><span>Computers in Biology and Medicine, April 2019</span>
                             </li>
                             <li><a href="https://dl.acm.org/doi/abs/10.1145/3233547.3233561" target="_blank">Melanoma risk prediction with structured electronic health records &nbsp;<i class="lni lni-network"></i></a>
                                 <br><span>ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics, August 2018</span>
                             </li>
-                            <li><a href="https://www.sciencedirect.com/science/article/pii/S093336571730009X" target="_blank">A review of statistical and machine learning methods for modeling cancer risk using structured clinical data &nbsp;<i class="lni lni-book"></i></a>
+                            <li><a class="featured" href="https://www.sciencedirect.com/science/article/pii/S093336571730009X" target="_blank">A review of statistical and machine learning methods for modeling cancer risk using structured clinical data &nbsp;<i class="lni lni-book"></i></a>
                                 <br><span>Artificial Intelligence in Medicine, July 2018</span>
                             </li>
                             <li><a href="https://ieeexplore.ieee.org/abstract/document/8217945" target="_blank">Predicting sentinel node status in melanoma from a real-world EHR dataset &nbsp;<i class="lni lni-network"></i></a>
@@ -410,7 +410,7 @@
 
                     <div id="port-phd-mobile" class="port-item col-lg-5 justify-content-center collapse">
                         <h3 class="portfolio-title justify-content-center">Predicting Melanoma Risk</h3>
-                        <p>Built and evaluated several machine learning models to predict individual patient risk of devloping melanoma from routinely captured electronic health records. 
+                        <p>Built and evaluated several machine learning models to predict individual patient risk of developing melanoma from routinely captured electronic health records. 
                             Involved processing de-identified data from over 20 million patients into a research dataset to create over 100,000 features used for building predictive models.</p>
                         <p>Wrote all code and conducted all experiments myself.</p>
                         <ul>
@@ -422,6 +422,7 @@
                             <li><b>Writing:</b> Overleaf / ShareLaTeX, Lucidchart</li>
                         </ul>
                         <p><a href="content/dissertation.pdf" target="_blank">Download PDF here!</a></p>
+                        <br>
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe src="https://www.youtube.com/embed/g-gTYFR9aEI" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
@@ -430,7 +431,7 @@
                 </div>
 
                 <div class="row justify-content-center">
-                    <div id="port-item-1" class="port-item col-lg-5 col-md-10 collapse show"></div>
+                    <div id="port-item-1" class="port-item col-lg-5 col-md-10 collapse"></div>
                 </div>
 
                 <div class="row justify-content-center">
@@ -445,10 +446,28 @@
 
                     <div id="port-etl-mobile" class="port-item col-lg-5 justify-content-center collapse">
                         <h3 class="portfolio-title justify-content-center">Spark ETL</h3>
+                        <p>
+                            This project is the pride and joy of my work at ModMed. It started as a way to generate different datasets that had shared ETL components, and grew to power the entire business's enterprise data warehouse and data products. 
+                        </p>
+                        <p>
+                            The main concept is having object-oriented wrappers around the functional logic of ETL transformations. This allows re-usable operations to be encapsulated and de-couples storage/IO logic from the ETL. It is portable and can run on any environment that supports Spark. Engineers can focus solely on data transformations without worrying about scaffolding or boilerplate code.
+                            Additionally, it allows for local development and unit testing before deploying to data in the wild. Metadata and data quality are first class citizens, with a table not "complete" until data quality rules have been written and applied at runtime. Data dictionaries are generated from code so documentation is always up-to-date. Find out more in the video below from my Spark+AI Summit talk.
+                        </p>
+                        <p>
+                            Most recently, I refactored the core code to support Databricks as an execution environment in addition to Amazon EMR. As part of this process, I built an Airflow DAG that allowed tables to be generated asynchronously, blocking until each table's parent(s) were generated.
+                            This decreased the runtime of our nightly data warehouse pipeline by 75%, enabling a new data product to be delivered to our clients that was not previously possible. 
+                        </p>
                         <ul>
-                            <li>Made data do things</li>
-                            <li>Spark fast, make data go weeeeee</li>
+                            <li><b>Languages:</b> Python, JSON, YAML, Java (minimal)</li>
+                            <li><b>Platforms:</b> Databricks, AWS (EMR, S3)</li>
+                            <li><b>Frameworks:</b> Spark, Airflow</li>
+                            <li><b>Tables:</b> 500+ tables for 20+ data products</li>
+                            <li><b>Code:</b> 40,000+ lines of code and 500+ pull requests (30,000 and 350 by yours truly)</li>
                         </ul>
+                        <br>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe src="https://www.youtube.com/embed/WUr9UqlpnGc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
 
                     <div class="col-lg-3 col-sm-4">
@@ -461,10 +480,22 @@
 
                     <div id="port-team-mobile" class="port-item col-lg-5 justify-content-center collapse">
                         <h3 class="portfolio-title justify-content-center">Data Team @ ModMed</h3>
+                        <p>I started at ModMed as a software engineering intern focused on building out data pipelines. I was eventually brought on full time as a data scientist, becoming the first member of the data team. 
+                            The team is a dynamic team within a dynamic company, exemplified by our growth (and the fact that my desk has been moved over 10 times!). I have been fortunate to see the team expand from just me to over 10 data professionals.
+                        </p>
+                        <p>
+                            As an individual with intricate knowledge of the data models and ETL pipelines at the company, I serve as a technical lead and subject matter expert for the data warehouse and analytics products. 
+                            This involves architecture work, best practice/documentation writing, and software lifecycle activities. 
+                        </p>
                         <ul>
-                            <li>I found people to do stuff</li>
-                            <li>And then helped them do the stuff</li>
+                            <li>Conducted countless interviews</li>
+                            <li>Recruited several data engineers from my personal network</li>
+                            <li>Interviewed and onboarded multiple data engineers, biostatisticians, data analysts, and engineering interns</li>
+                            <li>Maintain software lifecycle for four major code repositories</li>
                         </ul>
+                        <div class="text-center">
+                            <img class="img-fluid text-center" alt="Data team" src="img/modmed-2.jpg" srcset="img/modmed-2.jpg 1x, img/modmed-2@2x.jpg 2x">
+                        </div>
                     </div>
 
                 </div>
@@ -503,6 +534,7 @@
                             <li>Will we ever have another conference?</li>
                             <li>Only corona knows</li>
                         </ul>
+                        <p></p>
                     </div>
                 </div>
 

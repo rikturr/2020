@@ -8,12 +8,11 @@ $(document).ready(function() {
     });
 
     // portfolio grid weirdness
-    var activePort = {'1': '#port-talks-mobile'};
+    var activePort = {};
     if ($(this).width() > SM) {
         $('.port-button-1').attr('data-target', '#port-item-1');
         $('.port-button-2').attr('data-target', '#port-item-2');
         $('.port-button-3').attr('data-target', '#port-item-3');
-        $('#port-item-1').html($('#port-talks-mobile').html());
 
         $('[class^="port-button"]').on('click', function(event) {
             // web, two column collapse
@@ -45,7 +44,6 @@ $(document).ready(function() {
             });
         });
     } else {
-        $('#port-talks-mobile').collapse('show');
         $('[class^="port-button"]').on('click', function(event) {
             // mobile, one column collapse independently
             $(this).toggleClass('active');
