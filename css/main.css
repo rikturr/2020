@@ -179,14 +179,6 @@ nav .navbar-brand:after {
     margin-top: 100px;
     background-color: #F2F2F2;
 }
-.skills_slideline {
-    position: absolute;
-    bottom: -5px;
-    height: 3px;
-    background-color: #0000FF;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
 
 h2 {
     font-size: 46px;
@@ -196,49 +188,8 @@ h2 {
 
 ul.social li.social-item {
     margin-right: 40px;
-    /* font-weight: 600; */
     font-size: 25px;
 }
-
-.nav-pills > li > a {
-    background-color: transparent !important;
-    color: #000000 !important;
-    padding: 0;
-    margin-right: 30px;
-    /* text-decoration: underline; */
-    /* transition: all 0.2s; */
-}
-
-.nav-pills > li:last-child > a {
-    margin-right: 0;
-}
-
-@media (max-width: 576px) {
-    .nav-pills > li > a:hover, a:active, a:focus {
-        background-color: transparent !important;
-        color: #0000FF !important;
-        text-decoration: underline;
-        transition: all 0.2s;
-    }
-
-    .nav-pills > li > a.active {
-        color: #0000FF !important;
-        text-decoration: underline;
-        transition: all 0.2s;
-    }
-
-    .nav-pills > li > a.active2 {
-        color: #0000FF !important;
-        text-decoration: underline;
-        transition: all 0.2s;
-    }
-
-    .skills_slideline {
-        display: none;
-    }
-}
-
-
 
 .skills-group {
     opacity: 0;
@@ -267,24 +218,46 @@ ul.social li.social-item {
 #skills-carousel {
     width: 100%;
 }
+#skills-carousel .carousel-inner {
+    height: 300px !important;
+} 
+@media (max-width: 576px) {
+    #skills-carousel .carousel-inner {
+        height: 500px !important;
+    } 
+} 
+
 #skills-carousel .carousel-indicators {
-    /* bottom: 100px; */
     position: relative;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
+    margin: 0 0 60px 0;
 }
 #skills-carousel .carousel-indicators li {
     text-indent: unset;
     font-size: 16px;
     width: auto;
     background-color: transparent;
+    margin-bottom: 10px;
+}
+#skills-carousel .carousel-indicators li:before {
+    content: "";
+    display: flex;
+    height: 3px;
+    top: 30px;
+    position: relative;
+    transition: 0.3s ease;
+} 
+#skills-carousel .carousel-indicators li.active:before, #skills-carousel .carousel-indicators li:hover:before {
+    background-color: #0000FF;
 }
 #skills-carousel .carousel-indicators li:not(:last-child) {
     margin-right: 30px;
   }
-#skills-carousel .carousel-indicators li.active,  #skills-carousel .carousel-indicators li:hover{
+/* #skills-carousel .carousel-indicators li.active,  #skills-carousel .carousel-indicators li:hover{
     background-color: #0000FF;
     transition: 0.3s ease;
-}
+} */
+
 #skills-carousel .carousel-control-prev, #skills-carousel .carousel-control-next {
     bottom: 100px;
 }
@@ -292,15 +265,6 @@ ul.social li.social-item {
     color: #0000FF;
     font-size: 20px;
 }
-
-#skills-carousel .carousel-inner {
-    height: 400px !important;
-} 
-@media (max-width: 576px) {
-    #skills-carousel .carousel-inner {
-        height: 600px !important;
-    } 
-} 
 
 /* .skill-tools {
     border-right: 1px solid;
@@ -369,7 +333,7 @@ ul.social li.social-item {
     padding-bottom: 5px;
 }
 .portfolio-grid a:hover span, .portfolio-grid .active span {
-    border-bottom: 3px solid #0000FF
+    border-bottom: 3px solid #0000FF;
 }
 
 .portfolio-title {
@@ -398,6 +362,10 @@ ul.social li.social-item {
     transition: 0.5s;
     opacity: 0.5;
     color: #0000FF;
+}
+
+[class*="port-button"]:hover i {
+    opacity: 1;
 }
 
 [class*="port-button"].active i {

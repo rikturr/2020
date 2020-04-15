@@ -97,33 +97,6 @@ $(document).ready(function() {
         });
     });
 
-    // skills pills
-    var navSkills = $('#skills-tab'),
-        slideLineSkills = $('#slideline-skills'),
-        activeItemSkills = ($(navSkills).find('a.active').length > 0) ? $(navSkills).find('a.active') : $(navSkills).find('a:first-child');
-    // activeItemSkills.addClass('active2');
-    
-    slideActiveNav(activeItemSkills, slideLineSkills);
-    $('#skills-tab a.nav-link').on('mouseover', function(event) {
-        slideLineSkills.css({
-          'width': $(this).width(),
-          'left': $(this).position().left
-        });
-    });
-    $(navSkills).on('mouseleave', function(event) {
-        slideActiveNav(activeItemSkills, slideLineSkills);
-    });
-    $('#skills-tab a.nav-link').on('click', function(event) {
-        $('#skills-tab').find('a.active').removeClass('active');
-        $('#skills-eng-tab').removeClass('active2');
-        activeItemSkills = $(this);
-        slideLineSkills.css({
-            'width': $(this).width(),
-            'left': $(this).position().left
-        });
-    });
-
-
     // Navbar sticky
     if ($('#navbar').length > 0 ) {
         addSticky()
