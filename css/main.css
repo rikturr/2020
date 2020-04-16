@@ -266,27 +266,22 @@ ul.social li.social-item {
     font-size: 20px;
 }
 
-/* .skill-tools {
-    border-right: 1px solid;
-} */
-.skill-tool-list {
-    list-style-type: none;
+.skill-rating {
+    padding-left: 10px;
+    padding-right: 10px;
 }
-.skill-tool-list li {
+.skill-rating span {
     font-size: 14px;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    /* padding-inline-start: 40px; */
 }
-
-.skill-tool-rating {
-    list-style-type: none;
-}
-.skill-tool-rating li {
+.skill-rating div {
     display: flex;
     font-size: 14px;
     margin-bottom: 10px;
 }
-.skill-tool-rating li:before {
+.skill-rating div:before {
     content: "";
     height: 6px;
     margin-right: 10px;
@@ -295,17 +290,14 @@ ul.social li.social-item {
     top: 8px;
     position: relative;
 }
-.skill-tool-rating li.super:before {
-    width: 60%;
+.skill-rating .expert:before {
+    width: 100%;
 }
-.skill-tool-rating li.expert:before {
+.skill-rating .fluent:before {
     width: 50%;
 }
-.skill-tool-rating li.fluent:before {
-    width: 30%;
-}
-.skill-tool-rating li.dabbler:before {
-    width: 10%;
+.skill-rating .dabbler:before {
+    width: 20%;
 }
 
 .portfolio-anchor {
@@ -320,6 +312,7 @@ ul.social li.social-item {
     margin-right: 10px;
     margin-bottom: 60px;
 }
+
 .portfolio-grid img {
     margin-bottom: 10px;
 }
@@ -334,6 +327,12 @@ ul.social li.social-item {
 }
 .portfolio-grid a:hover span, .portfolio-grid .active span {
     border-bottom: 3px solid #0000FF;
+}
+.port-item-sep {
+    margin-top: 50px;
+    height: 2px;
+    background-color: #000000;
+    opacity: 0.5;
 }
 
 .portfolio-title {
@@ -375,6 +374,9 @@ ul.social li.social-item {
     opacity: 1;
 }
 
+.port-item {
+    margin-bottom: 50px;
+}
 .port-item a:hover, .port-item a:active, .port-item a:focus  {
     text-decoration: none;
 }
