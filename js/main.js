@@ -154,8 +154,10 @@ $(document).ready(function() {
     // Navbar BS Scrollspy
     if ($('#index, #index-video, #index-parallax, #index-slider, #index-rtl, #index-dark').length > 0 ) {
         $('.navbar a').each(function() {
-            var hash = this.hash;
-            this.href = hash;
+            if( !$(this).hasClass('external') ) {
+                var hash = this.hash;
+                this.href = hash;
+            }
         });
         // Slideline on scroll
         $(window).on('activate.bs.scrollspy', function () {
