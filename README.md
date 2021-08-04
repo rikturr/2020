@@ -1,5 +1,6 @@
-# rikturr
+# rikturr-2020.github.io
 
-[rikturr.com](https://rikturr.com)
+Aaron Richter's **old** personal website from 2020.
 
-Aaron Richter's personal website
+See [rikturr.com](https://rikturr.com) for the newest version.
+
